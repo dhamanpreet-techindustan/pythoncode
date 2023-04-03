@@ -1,18 +1,18 @@
 from github import Github
 
 user = "dhamanpreet-techindustan"
-password = "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"
-g = Github(user,password)
+password = "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"
+g = Github(password)
 repo = g.get_user().get_repo('pythoncode')
 file_list = [
-    '/home/dhaman/Documents'
+    '/home/dhaman/Documents/gitpython.py'
 ]
 file_name = [
     'gitpython,py'
 ]
 commit_message = 'python commit'
-master_ref = repo.get_git_ref('master')
-master_sha = master_ref.oject.sha
+master_ref = repo.get_git_ref('heads/master')
+master_sha = master_ref.object.sha
 base_tree = repo.get_git_tree(master_sha)
 
 tree = repo.create_git_tree(base_tree)
